@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f2ecf4",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#765b00",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#cbc4d2",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-high": "#ece6ee",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e1d4fd",
+                        "primary": "#4f378a",
+                        "on-surface": "#1d1b20",
+                        "inverse-primary": "#cfbcff",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "secondary": "#63597c",
+                        "on-secondary-fixed": "#1f1635",
+                        "primary-fixed": "#e9ddff",
+                        "on-primary-container": "#e0d2ff",
+                        "surface-variant": "#e6e0e9",
+                        "on-surface-variant": "#494551",
+                        "outline": "#7a7582",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fdf7ff",
+                        "tertiary-fixed": "#ffdf93",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "on-secondary-container": "#645a7d",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-tertiary-container": "#503d00",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#6750a4",
+                        "surface-container-low": "#f8f2fa",
+                        "surface-bright": "#fdf7ff",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "surface-dim": "#ded8e0",
+                        "on-primary-fixed": "#22005d",
+                        "tertiary-container": "#c9a74d",
+                        "on-background": "#1d1b20",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#322f35",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "secondary-fixed": "#e9ddff",
+                        "inverse-on-surface": "#f5eff7",
+                        "surface-tint": "#6750a4",
+                        "on-error": "#ffffff",
+                        "background": "#fdf7ff",
+                        "surface-container-highest": "#e6e0e9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "section-gap": "64px",
+                        "card-gap": "24px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Hanken Grotesk"],
+                        "caption": ["Hanken Grotesk"],
+                        "body-primary": ["Hanken Grotesk"],
+                        "page-title": ["Hanken Grotesk"],
+                        "body-secondary": ["Hanken Grotesk"],
+                        "section-title": ["Hanken Grotesk"],
+                        "card-title": ["Hanken Grotesk"],
+                        "page-title-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["11px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-primary": ["11px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "page-title": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-secondary": ["12px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "section-title": ["16px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "card-title": ["16px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "page-title-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .portfolio-card-hover:hover {
+            box-shadow: 0 4px 12px rgba(0, 87, 255, 0.1);
+            transform: scale(1.02);
+            transition: all 0.2s ease-in-out;
+        }
+        .editorial-focus:focus-within {
+            border-bottom: 2px solid #0057FF;
+        }
+        .nav-link-active {
+            color: #0057FF;
+            border-bottom: 2px solid #0057FF;
+            padding-bottom: 4px;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest font-body-secondary text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full h-[64px] bg-surface-container-lowest border-b border-outline-variant z-50">
+<div class="flex justify-between items-center px-container-padding max-w-[1440px] mx-auto w-full h-full">
+<div class="flex items-center gap-8">
+<span class="font-page-title text-page-title tracking-tight text-on-surface">Portfolio.</span>
+<nav class="hidden md:flex items-center space-x-4">
+<a class="nav-link-active font-body-secondary text-body-secondary px-4" href="#">Discover</a>
+<a class="text-on-surface-variant font-body-secondary text-body-secondary hover:text-primary transition-colors px-4" href="#">Hire</a>
+<a class="text-on-surface-variant font-body-secondary text-body-secondary hover:text-primary transition-colors px-4" href="#">Inspiration</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<button class="bg-[#0057FF] text-white rounded-full px-6 h-8 font-body-primary text-body-primary flex items-center justify-center hover:opacity-90 active:scale-95 transition-all">
+                    Sign In
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-[64px] max-w-[1440px] mx-auto">
+<!-- Hero Search Section -->
+<section class="px-container-padding pt-16 pb-12 flex flex-col items-center">
+<h1 class="font-page-title text-page-title text-center mb-8 text-on-surface">Discover the world's top designers &amp; creatives</h1>
+<div class="w-full max-w-2xl editorial-focus border-b border-outline-variant transition-all">
+<div class="flex items-center h-[42px] px-2 bg-transparent">
+<span class="material-symbols-outlined text-on-surface-variant mr-3">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-secondary text-[16px] outline-none text-on-surface" placeholder="Search creative projects..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="px-container-padding mb-8">
+<div class="flex flex-wrap items-center gap-4">
+<button class="bg-[#F5F8FF] text-[#0057FF] rounded-full px-4 h-8 font-label-bold text-label-bold">All Categories</button>
+<button class="bg-[#F2F2F2] text-[#191919] rounded-full px-4 h-8 font-label-bold text-label-bold hover:bg-surface-variant transition-colors">UI/UX Design</button>
+<button class="bg-[#F2F2F2] text-[#191919] rounded-full px-4 h-8 font-label-bold text-label-bold hover:bg-surface-variant transition-colors">Graphic Design</button>
+<button class="bg-[#F2F2F2] text-[#191919] rounded-full px-4 h-8 font-label-bold text-label-bold hover:bg-surface-variant transition-colors">Motion Graphics</button>
+<button class="bg-[#F2F2F2] text-[#191919] rounded-full px-4 h-8 font-label-bold text-label-bold hover:bg-surface-variant transition-colors">Branding</button>
+<button class="bg-[#F2F2F2] text-[#191919] rounded-full px-4 h-8 font-label-bold text-label-bold hover:bg-surface-variant transition-colors">Photography</button>
+</div>
+</section>
+<!-- Portfolio Grid -->
+<section class="px-container-padding pb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-card-gap">
+<!-- Project Card 1 -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist UI design project featuring a high-end fashion e-commerce interface. The aesthetic is contemporary with crisp typography and expansive white space, illuminated by soft studio lighting. A neutral color palette of charcoal and cream dominates the scene, creating a sophisticated and editorial feel typical of a premium design agency showcase." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnQK2PD6sjssmnDgKikfNLmlVI2_Ri7K_WS9cBl9P_qrAIK7GXtsa4JsBshy1u2l3CORV3EOaCLyQ_I1YC3_7Xn3Rx8qkIffg494FdyNSpyGgSgytrxubQ-Eo_dE9xV5w6gyxGuQSgLfab9QLmWJ40rDnzmSL-yTCr9eaVUKLzgpJVMp-IfYrCqv01-a7MOq0B98l4VIHVeYpwzPJOkgSj8kpqiIzqdFvpem7Uxh0EBRBuddIyPYUzVcv5DnICmb9SD0143wDg9Q"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Minimalist E-Commerce</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">UI/UX Design</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">1.2k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A bold motion graphics piece showing fluid 3D geometric shapes morphing in a vibrant, high-contrast environment. The lighting is cinematic with deep purple and electric blue neons reflecting off glossy surfaces. The overall mood is energetic and futuristic, captured in a sharp, high-definition digital render that highlights intricate textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy7cl4OjiS91jCjz_KLLjkEP6sErZ3sxnZ2e5BU7ysKT4PRFGHIWTx_8tUFCJCgw_uFvvEoJ0SpiiXXIuqMxVUBH_4Xd_iKd4qLNO7DzyeyHUZi-tcIa05SLW8rbauV2ZgK13ix_XKhKCmKauKZujjtKCLMlSqLk9pVUhMpRjFBNfxCFB3_BDUIx7po9QMBGSrmosNBALYgPUPv0J9UtiuFkalzhmzu69l90Eihrhu8SzcAlfyLIZ94M8PX1WGjbGi1WS_g1k-fg"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Fluid Motion Identity</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">Motion Graphics</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">842</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A premium branding and packaging design for a luxury skincare line. The design features elegant serif typography on textured paper stock with gold foil accents. The setting is a bright, sun-drenched marble surface with soft natural shadows, evoking a sense of calm, organic luxury and high-end professional craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ5IM-GQnDk1WvA4uH7Jn7VUlLHICgd0dSDjhYwsXI_Dt_IrdWTPdZelhmrTv5pZJphJvo95faQcgM-8BhsqK9ZdJlVT9hl15cXe8aUSlLciQzuIPOdBnOlMNkdVbtdV74cJJ5JtWuSYiFLSUogc_zm9NyN4R1ol_cx5yfynt4CyAKR_ZdVlbd4GaXEEqM1frAzDuIY7U27R93dWaaSA6r0X1Smgy14_qnOaJUwcNU4MMcIsSQsKOz9nJronjAq3EE7aEeS_Qu2g"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Organic Skin Brand</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">Branding</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">2.5k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A modern architectural photography portfolio project capturing a brutalist concrete building against a clear, deep blue sky. The lighting is harsh and direct, creating strong shadows and emphasizing the raw texture of the concrete. The composition is geometric and balanced, following a minimalist editorial style with a cool, intellectual atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvVt8NbKNF20UM0YTuXj4bqwiH3DGFzOy35TnCd2IQBpgE7VtCjNXmTh5GpE0gMZZqzu36BO0u4WpAqOBR-7v1SDoVOetBQRhQZ8dUeVgqHeIXSRHG1iqF8gqd7guRicTDanYGxFdCtmBNHEUjQJoPP26DN7TE2Xaw_SlV4GGLclfrRhbA5rZJNgpwLwGffsgB3wTbDm8OaMfj-UFb2t8aMcTsgbYspXCVC4Ihwl8rZTdmo3ikMLrc2aEYqzRIs2QnoEtN-sOplA"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Modernist Structures</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">Photography</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">1.8k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 5 (Repeated for Grid fill) -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A vibrant digital illustration depicting a stylized futuristic cityscape at sunset. Warm orange and pink hues flood the scene, reflecting off glass skyscrapers. The art style is clean and flat with sharp vectors, presenting a optimistic and creative vision of urban life in a professional portfolio context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCFB9xfy45PTYaIE-kqGpITW9IxE8s2qGUkV151wZCb7vqh5LQz3V0wE8z66HMBUu5D7iqkqVYqwWrU_xbpHMRWYjtbcOGOxEIqgcX3HzPNKkN7fOrSxpOIr89vla2_YhFbmL7O3LG3mbgfZBny1IpFiGgK7Wg97DTIA0tccOgyq2QJhXrekkw2OK7wjaI3xJh1pj_o43ZNxQRThSNpK6wEcwjQf_S36iyrTVXidc_lcNyV1jI6xflUfvoHH9O6jssmr59j5h9hA"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Neon Horizon</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">Illustration</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">940</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A sleek mobile app interface designed for a creative social network. The layout uses a dark-mode aesthetic with vibrant accents of primary blue. High-quality imagery is framed within modern rounded containers, showing a sophisticated use of typography and interactive elements in a high-fidelity prototype view." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1GcgXB-MFdRP4S702znBVefmm4Hd0j_Irx7YwfcnRul538Po2LMzaChJEkr3rJDK266gY9oEC_SPYHLLC67bMqpHlEx3r0GBXtzkwOJT6XbnqdckP5BXHB6GxnfKc4VOMY-ewINKBBgDMFPjI3l0LuQHpKbZxipMAj5UG3_W7qOwU8A4HHrvJCZJGizW1bemNETfX6-frhAFsgafdv6EiQTl8UtkxaVD1GMife8kY_8khSYuDufdibh7DpruWl_5qGJAf8DM2Fw"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Social Interaction UI</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">UI/UX Design</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">3.1k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 7 -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A series of editorial magazine covers featuring avant-garde typography and high-contrast black and white photography. The layout is experimental and asymmetric, showcasing a deep understanding of Swiss-style grid systems and professional print production techniques in a clean studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARtMQRDMCEiMFnOQ9M-tcqm2R-8l68j9UnCGBgGn7I3P4UEty77srjLjBEswzxgwrfISOeHAG7BMBVZPOdrV0LOzjCCRVrB_juxIC5iQ3wPC1M05eWxjetF8mpv-C-yjN6iQCQNywhrPZJzzqOTSFVglpMZdpBcUgGv2gOX42EZhsXA_1QfiMCRjETqudYUCkPVWJ09vwe8Ss6Kk_Vyv7iDkRJSd9pl6g0rn9ikuSMJRkbglcmmlnTAugEgWrahyxbPbov6f_RIw"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Avant-Garde Editorial</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">Graphic Design</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">654</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 8 -->
+<div class="w-full md:w-[312px] h-[238px] rounded-[4px] bg-transparent portfolio-card-hover flex flex-col overflow-hidden group cursor-pointer">
+<div class="w-full h-[182px] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A stylized 3D product render for high-end headphones. The lighting is focused and dramatic, highlighting the sleek curves and metallic textures of the product. Set against a deep, muted background, the render exudes premium quality and modern industrial design excellence, capturing the essence of professional commercial visualization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-11ASAxtzY8zDKfjcyOuePmlWMdZAkrzvotiYuXlChRj2bMOhpjo-YPIgPc7c1dBSyX87YhrTr6bbBjB2ElZyra5N2lxLR1yLV3ViPXtJVUmNcdHp9UdV-qXCLjhMv3sItTO4Z6vMgrkm-MQGXHwLpyyeVUWCsF9_qKXLuiBsB4Wv6ExTIOhZDZcJq5rjYWK_NxlsS5NSBKVRfz9M8GDiQbgTNGapIKZpnIzpb1qoQU2uHPpHLY0kfIL5ruIy_FPH1dWqv4GDuw"/>
+</div>
+<div class="p-3 bg-transparent flex flex-col gap-1">
+<h3 class="font-section-title text-section-title text-[#191919] truncate">Sonic Industrial</h3>
+<div class="flex justify-between items-center">
+<span class="font-body-secondary text-body-secondary text-on-surface-variant">Product Design</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span class="font-label-bold text-label-bold">1.4k</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-padding max-w-[1440px] mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-label-bold text-label-bold text-on-surface">Portfolio.</span>
+<p class="font-caption text-caption text-on-surface-variant text-center md:text-left">© 2024 Portfolio Discovery Platform. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
